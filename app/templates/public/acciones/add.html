@@ -1,0 +1,83 @@
+{% extends 'public/layout.html' %}
+{% block title %}Registrar Carro{% endblock %}
+
+{% block body %}
+
+
+<section>
+    <h2>
+        <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        Registrar llave
+        <hr>
+    </h2>
+
+    <form action="{{ url_for('formAddCarro') }}" method="POST" class="mb-3" autocomplete="off" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col">
+                <label for="marca">Prestador</label>
+                <input type="text" name="marca" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="Year">Sector</label>
+                <select name="year" class="form-control" required>
+                    <option value="">--- Seleccione la ubicacion ---</option>
+                    <option value="Biblioteca">Biblioteca</option>
+                    <option value="Pabellon1">Pabellon1</option>
+                    <option value="Pabellon2">Pabellon2</option>
+                    <option value="Pabellon3">Pabellon3</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="color">Marca</label>
+                <select name="color" class="form-control" required>
+                    <option value="">--- Seleccione la Marca ---</option>
+                    <option value="Hermex">Hermex</option>
+                    <option value="JMA">JMA</option>
+                    <option value="Abus">Abus</option>
+                    <option value="Yale">Yale</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="puertas">Profesor prestatario</label>
+                <input type="text" name="puertas" class="form-control" required>
+            </div>
+
+            <div class="col">
+                <label for="puertas">Autorizado</label>
+                <br><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="favorito" value="Si" checked>
+                    <label class="form-check-label" for="favorito">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="favorito" value="No">
+                    <label class="form-check-label" for="favorito">No</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <label for="foto">Foto del Profesor</label>
+                <input type="file" name="foto" class="form-control-file" accept="image/*" required>
+            </div>
+        </div>
+        <hr>
+
+        
+
+        <input class="button-primary mt-3 btn btn-info btn-block bold" type="submit" value="Guardar Registro">
+    </form>
+</section>
+
+{% endblock %}
